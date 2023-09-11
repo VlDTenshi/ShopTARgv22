@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<Shop.Models.Spaceship.SpaceshipIndexViewModel>
 
+@{
+    int rowNumber = 1;
+}
 
 <div class="h1">
     Spaceships
@@ -22,13 +25,15 @@
                 @foreach (var spaceship in Model)
                 {
                     <tr>
-                        <td></td>
+                        <td>@rowNumber</td>
                         <td>@spaceship.Name</td>
                         <td>@spaceship.Type</td>
                         <td>@spaceship.Passengers</td>
                         <td>@spaceship.EnginePower</td>
-                    </tr>
-                }
+                </tr>
+
+                rowNumber += 1;
+            }
         </tbody>
     </table>
 </form>
