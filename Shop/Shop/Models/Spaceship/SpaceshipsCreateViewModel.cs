@@ -1,6 +1,6 @@
 ﻿namespace Shop.Models.Spaceship
 {
-    public class SpaceshipIndexViewModel
+    public class SpaceshipsCreateViewModel
     {
         public Guid? ID { get; set; }
         public string Name { get; set; }
@@ -12,6 +12,5 @@
         public int FuelCapacity { get; set; }
         public string Company { get; set; }
         public int CargoWeight { get; set; }
-
     }
 }
