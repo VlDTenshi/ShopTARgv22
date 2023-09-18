@@ -2,7 +2,7 @@
 {
     public class SpaceshipIndexViewModel
     {
-        public Guid? ID { get; set; }
+        public Guid? Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public int Passengers { get; set; }

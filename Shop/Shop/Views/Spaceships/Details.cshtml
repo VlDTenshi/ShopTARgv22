@@ -1,0 +1,50 @@
+﻿@model Shop.Models.Spaceship.SpaceshipDetailsViewModel
+
+
+<h1>Details</h1>
+<div>
+    <h4>Spaceships</h4>
+    <hr />
+    <dl class="row">
+        <div>
+            <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Id)
+        </div>
+        <div>
+            <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Name)
+        </div>
+        <div>
+            <label asp-for="Type" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Type)
+        </div>
+        <div>
+            <label asp-for="Passengers" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Passengers)
+        </div>
+        <div>
+            <label asp-for="Crew" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Crew)
+        </div>
+        <div>
+            <label asp-for="Company" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Company)
+        </div>
+        <div>
+            <label asp-for="EnginePower" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.EnginePower)
+        </div>
+        <div>
+            <label asp-for="CargoWeight" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.CargoWeight)
+        </div>
+        <div>
+            <label asp-for="FuelCapacity" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.FuelCapacity)
+        </div>
+        <div>
+            <label asp-for="FuelType" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.FuelType)
+        </div>
+    </dl>
+</div>

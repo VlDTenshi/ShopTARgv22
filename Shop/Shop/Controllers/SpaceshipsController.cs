@@ -28,7 +28,7 @@ namespace Shop.Controllers
             var result = _context.Spaceships
                 .Select(x => new SpaceshipIndexViewModel
                 {
-                    ID=x.Id,
+                    Id=x.Id,
                     Name=x.Name,
                     Type=x.Type,
                     EnginePower=x.EnginePower,
@@ -47,7 +47,7 @@ namespace Shop.Controllers
         {
             var dto = new SpaceshipDto()
             {
-                Id = vm.ID,
+                Id = vm.Id,
                 Name = vm.Name,
                 Type = vm.Type,
                 Passengers = vm.Passengers,
@@ -84,11 +84,12 @@ namespace Shop.Controllers
             vm.EnginePower = spaceship.EnginePower;
             vm.Company = spaceship.Company;
             vm.FuelType = spaceship.FuelType;
+            vm.FuelCapacity = spaceship.FuelCapacity;
             vm.CreatedAt = spaceship.CreatedAt;
             vm.ModifiedAt = spaceship.ModifiedAt;
 
             return View(vm);
-            vm.FuelCapacity = spaceship.FuelCapacity;
+            
         }
     }
 }
