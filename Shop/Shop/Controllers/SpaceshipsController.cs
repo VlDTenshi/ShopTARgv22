@@ -64,5 +64,31 @@ namespace Shop.Controllers
 
             return RedirectToAction(nameof(Index), vm);
         }
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var spaceship = await _spaceshipServices.GetAsync(id);
+
+            if (spaceship == null)
+            {
+                return NotFound();
+            }
+
+            var vm = new SpaceshipDetailsViewModel();
+
+            vm.Id = spaceship.Id;
+            vm.Name = spaceship.Name;
+            vm.Type = spaceship.Type;
+            vm.Passengers = spaceship.Passengers;
+            vm.Crew = spaceship.Crew;
+            vm.EnginePower = spaceship.EnginePower;
+            vm.Company = spaceship.Company;
+            vm.FuelType = spaceship.FuelType;
+            vm.CreatedAt = spaceship.CreatedAt;
+            vm.ModifiedAt = spaceship.ModifiedAt;
+
+            return View(vm);
+            vm.FuelCapacity = spaceship.FuelCapacity;
+        }
     }
 }
