@@ -52,8 +52,8 @@ namespace Shop.Controllers
                 Type = vm.Type,
                 Passengers = vm.Passengers,
                 EnginePower = vm.EnginePower,
-                FuelType = vm.FuelType,
-                FuelCapacity = vm.FuelCapacity,
+                //FuelType = vm.FuelType,
+                //FuelCapacity = vm.FuelCapacity,
                 Crew = vm.Crew,
                 Company = vm.Company,
                 CargoWeight = vm.CargoWeight
@@ -83,8 +83,8 @@ namespace Shop.Controllers
             vm.Crew = spaceship.Crew;
             vm.EnginePower = spaceship.EnginePower;
             vm.Company = spaceship.Company;
-            vm.FuelType = spaceship.FuelType;
-            vm.FuelCapacity = spaceship.FuelCapacity;
+            //vm.FuelType = spaceship.FuelType;
+            //vm.FuelCapacity = spaceship.FuelCapacity;
             vm.CreatedAt = spaceship.CreatedAt;
             vm.ModifiedAt = spaceship.ModifiedAt;
 

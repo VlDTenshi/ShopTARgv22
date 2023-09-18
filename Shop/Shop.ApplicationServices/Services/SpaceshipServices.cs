@@ -37,8 +37,8 @@ namespace Shop.ApplicationServices.Services
             spaceship.EnginePower = dto.EnginePower;
             spaceship.Crew = dto.Crew;
             spaceship.Company = dto.Company;
-            spaceship.FuelCapacity = dto.FuelCapacity;
-            spaceship.FuelType = dto.FuelType;
+            //spaceship.FuelCapacity = dto.FuelCapacity;
+            //spaceship.FuelType = dto.FuelType;
             spaceship.CargoWeight = dto.CargoWeight;
             spaceship.CreatedAt = DateTime.Now;
             spaceship.ModifiedAt = DateTime.Now;
@@ -49,6 +49,25 @@ namespace Shop.ApplicationServices.Services
             return spaceship;
         }
 
+        public async Task<Spaceship> Update(SpaceshipDto dto)
+        {
+            var domain = new Spaceship()
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Type = dto.Type,
+                Passengers = dto.Passengers,
+                EnginePower = dto.EnginePower,
+                Crew = dto.Crew,
+                Company = dto.Company,
+                CargoWeight = dto.CargoWeight,
+                CreatedAt = dto.CreatedAt,
+                ModifiedAt = DateTime.Now,
+            };
+            _context.Spaceships.Update( domain );
+            await _context.SaveChangesAsync();
+            return domain;
+        }
         public async Task<Spaceship>GetAsync(Guid id)
         {
             var result = _context.Spaceships
