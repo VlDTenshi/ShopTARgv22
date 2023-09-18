@@ -68,12 +68,21 @@ namespace Shop.ApplicationServices.Services
             await _context.SaveChangesAsync();
             return domain;
         }
+
+        public async Task<Spaceship>Delete(Guid id)
+        {
+            var spaceshipId = await _context.Spaceships
+                .FirstOrDefaultAsync( x => x.Id == id );
+            _context.Spaceships.Remove( spaceshipId );
+            await _context.SaveChangesAsync();
+            return spaceshipId;
+        }
         public async Task<Spaceship>GetAsync(Guid id)
         {
-            var result = _context.Spaceships
+            var result = await _context.Spaceships
                 .FirstOrDefaultAsync(x => x.Id == id);
 
-            return await result;
+            return result;
         }
     }
 }

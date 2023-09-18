@@ -38,6 +38,14 @@
             <label asp-for="CargoWeight" class="col-sm-2 col-form-label"></label>
             @Html.DisplayFor(model => Model.CargoWeight)
         </div>
+        <div>
+            <label asp-for="CreatedAt" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.CreatedAt)
+        </div>
+        <div>
+            <label asp-for="ModifiedAt" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.ModifiedAt)
+        </div>
         @* <div>
             <label asp-for="FuelCapacity" class="col-sm-2 col-form-label"></label>
             @Html.DisplayFor(model => Model.FuelCapacity)
@@ -47,4 +55,6 @@
             @Html.DisplayFor(model => Model.FuelType)
         </div> *@
     </dl>
+    <hr />
+    <a asp-action="index" class="btn btn-primary">Index</a>
 </div>
