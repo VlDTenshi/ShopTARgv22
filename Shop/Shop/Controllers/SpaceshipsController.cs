@@ -3,6 +3,8 @@ using Shop.Data;
 using Shop.Models.Spaceship;
 using ShopCore.Dto;
 using ShopCore.ServiceInterface;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.Xml.Linq;
 
 namespace Shop.Controllers
 {
@@ -15,24 +17,24 @@ namespace Shop.Controllers
 
             ShopContext context,
             ISpaceshipServices spaceshipServices
-            
-            ) 
-        
+
+            )
+
         {
             _context = context;
             _spaceshipServices = spaceshipServices;
         }
-    
+
         public IActionResult Index()
         {
             var result = _context.Spaceships
                 .Select(x => new SpaceshipIndexViewModel
                 {
-                    Id=x.Id,
-                    Name=x.Name,
-                    Type=x.Type,
-                    EnginePower=x.EnginePower,
-                    Passengers=x.Passengers,
+                    Id = x.Id,
+                    Name = x.Name,
+                    Type = x.Type,
+                    EnginePower = x.EnginePower,
+                    Passengers = x.Passengers,
                 });
             return View(result);
         }
@@ -43,7 +45,7 @@ namespace Shop.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(SpaceshipsCreateViewModel vm)
+        public async Task<IActionResult> Create(SpaceshipsCreateUpdateViewModel vm)
         {
             var dto = new SpaceshipDto()
             {
@@ -89,7 +91,33 @@ namespace Shop.Controllers
             vm.ModifiedAt = spaceship.ModifiedAt;
 
             return View(vm);
-            
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(Guid id)
+        {
+            var spaceship = await _spaceshipServices.GetAsync(id);
+            if (spaceship == null)
+            {
+                return NotFound();
+            }
+
+            var vm = new SpaceshipsCreateUpdateViewModel();
+
+            vm.Id = spaceship.Id;
+            vm.Name = spaceship.Name;
+            vm.Type = spaceship.Type;
+            vm.Passengers = spaceship.Passengers;
+            vm.Crew = spaceship.Crew;
+            vm.EnginePower = spaceship.EnginePower;
+            vm.Company = spaceship.Company;
+            //vm.FuelType = spaceship.FuelType;
+            //vm.FuelCapacity = spaceship.FuelCapacity;
+            vm.CreatedAt = spaceship.CreatedAt;
+            vm.ModifiedAt = spaceship.ModifiedAt;
+
+            return View("CreateUpdate", vm);
         }
     }
 }
