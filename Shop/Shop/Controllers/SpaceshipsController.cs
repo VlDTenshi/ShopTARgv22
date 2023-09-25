@@ -5,6 +5,7 @@ using ShopCore.Dto;
 using ShopCore.ServiceInterface;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System.Xml.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Shop.Controllers
 {
@@ -67,7 +68,7 @@ namespace Shop.Controllers
 
                         Id=x.Id,
                         ExistingFilePath=x.FilePath,
-                        SpaceshipId = x.SpaceshipId,
+                        SpaceshiId = x.SpaceshipId,
 
                     }).ToArray()
 
@@ -92,6 +93,16 @@ namespace Shop.Controllers
                 return NotFound();
             }
 
+            var images = await _context.FileToApis
+                .Where(x => x.SpaceshiId == id)
+                .Select(y=> new FileToApiViewModel
+                {
+
+                    FilePath= y.ExistingFilePath,
+                    SpaceshiId=y.Id
+
+                }).ToArrayAsync();
+
             var vm = new SpaceshipDetailsViewModel();
 
             vm.Id = spaceship.Id;
@@ -105,6 +116,7 @@ namespace Shop.Controllers
             //vm.FuelCapacity = spaceship.FuelCapacity;
             vm.CreatedAt = spaceship.CreatedAt;
             vm.ModifiedAt = spaceship.ModifiedAt;
+            vm.FileToApiViewModels.AddRange(images);
 
             return View(vm);
 

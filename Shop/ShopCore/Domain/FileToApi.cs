@@ -10,6 +10,6 @@ namespace ShopCore.Domain
     {
         public Guid Id { get; set; }
         public string ExistingFilePath {set; get; }
-        public Guid? SpaceshiId { get; set; }
+        public Guid? SpaceshipId { get; set; }
     }
 }

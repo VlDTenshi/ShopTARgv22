@@ -54,6 +54,12 @@
             <label asp-for="FuelType" class="col-sm-2 col-form-label"></label>
             @Html.DisplayFor(model => Model.FuelType)
         </div> *@
+
+        @foreach(var images in Model.FileToApiViewModels)
+        {
+            <partial name="_Images" model="images" />
+        }
+
     </dl>
     <hr />
     <a asp-action="index" class="btn btn-primary">Index</a>
