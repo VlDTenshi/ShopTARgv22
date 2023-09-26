@@ -15,7 +15,7 @@ namespace Shop.Data.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ExistingFilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SpaceshiId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    SpaceshipId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {

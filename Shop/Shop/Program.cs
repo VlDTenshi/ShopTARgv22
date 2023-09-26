@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Shop.ApplicationServices.Services;
 using Shop.Data;
 using ShopCore.ServiceInterface;
@@ -25,6 +26,14 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider
+    (Path.Combine(builder.Environment.ContentRootPath, "multipleFileUpload")),
+    RequestPath = "/multipleFileUpload"
+
+});
 
 app.UseRouting();
 

@@ -49,7 +49,7 @@ namespace Shop.ApplicationServices.Services
                         {
                             Id = Guid.NewGuid(),
                             ExistingFilePath = uniqueFileName,
-                            SpaceshiId = spaceship.Id,
+                            SpaceshipId = spaceship.Id,
                         };
 
                         _context.FileToApis.AddAsync(path);

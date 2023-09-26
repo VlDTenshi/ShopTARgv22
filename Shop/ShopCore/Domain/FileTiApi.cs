@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopCore.Dto
+namespace ShopCore.Domain
 {
-    public class FileToApiDto
+    public class FileTiApi
     {
         public Guid Id { get; set; }
-        public string ExistingFilePath { get; set;}
-        public Guid? SpaceshipId { get; set; }
+        public Guid? RealEstateId { get; set; }
     }
 }

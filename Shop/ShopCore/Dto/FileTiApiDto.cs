@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopCore.Dto
 {
-    public class FileToApiDto
+    public class FileTiApiDto
     {
         public Guid Id { get; set; }
-        public string ExistingFilePath { get; set;}
-        public Guid? SpaceshipId { get; set; }
+        public Guid? RealEstateId { get; set; }
     }
 }

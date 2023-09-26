@@ -68,7 +68,7 @@ namespace Shop.Controllers
 
                         Id=x.Id,
                         ExistingFilePath=x.FilePath,
-                        SpaceshiId = x.SpaceshipId,
+                        SpaceshipId = x.SpaceshipId,
 
                     }).ToArray()
 
@@ -94,12 +94,12 @@ namespace Shop.Controllers
             }
 
             var images = await _context.FileToApis
-                .Where(x => x.SpaceshiId == id)
+                .Where(x => x.SpaceshipId == id)
                 .Select(y=> new FileToApiViewModel
                 {
 
                     FilePath= y.ExistingFilePath,
-                    SpaceshiId=y.Id
+                    Id=y.Id
 
                 }).ToArrayAsync();
 
