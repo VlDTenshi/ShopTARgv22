@@ -103,7 +103,7 @@ namespace Shop.Controllers
             vm.RoomCount = realestate.RoomCount;
             vm.Floor = realestate.Floor;
             vm.BuildingType = realestate.BuildingType;
-            vm.BuiltInYear = realestate.Company;
+            vm.BuiltInYear = realestate.BuiltInYear;
             vm.CreatedAt = realestate.CreatedAt;
             vm.UpdatedAt = realestate.UpdatedAt;
             //vm.FileToApiViewModels.AddRange(images);
@@ -127,7 +127,7 @@ namespace Shop.Controllers
             vm.Address = realestate.Address;
             vm.SizeSqrM = realestate.SizeSqrM;
             vm.RoomCount = realestate.RoomCount;
-            vm.Floor = realestate.Crew;
+            vm.Floor = realestate.Floor;
             vm.BuildingType = realestate.BuildingType;
             vm.BuiltInYear = realestate.BuiltInYear;
             vm.CreatedAt = realestate.CreatedAt;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShopCore.ServiceInterface
 {
-    public class IRealEstateServices
+    public interface IRealEstateServices
     {
         Task<RealEstate> Create(RealEstateDto dto);
         Task<RealEstate> GetAsync(Guid id);
