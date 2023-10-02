@@ -47,20 +47,24 @@ namespace Shop.ApplicationServices.Services
         }
         public async Task<Spaceship> Update(SpaceshipDto dto)
         {
-            var domain = new Spaceship()
+            var domain = new Spaceship();
             {
-                Id = dto.Id,
-                Name = dto.Name,
-                Type = dto.Type,
-                Passangers = dto.Passangers,
-                EnginPower = dto.EnginPower,
-                Crew = dto.Crew,
-                Company = dto.Company,
-                CargoWeight = dto.CargoWeight,
-                CreatedAt = dto.CreatedAt,
-                Modifieted = DateTime.Now,
+                domain.Id = dto.Id;
+                domain.Name = dto.Name;
+                domain.Type = dto.Type;
+                domain.Passangers = dto.Passangers;
+                domain.EnginPower = dto.EnginPower;
+                domain.Crew = dto.Crew;
+                domain.Company = dto.Company;
+                domain.CargoWeight = dto.CargoWeight;
+                domain.CreatedAt = dto.CreatedAt;
+                domain.Modifieted = DateTime.Now;
+                _fileServices.FilesToApi(dto, domain);
 
+                _context.Spaceships.Update(domain);
+                await _context.SaveChangesAsync();
 
+                return domain;
 
             };
 

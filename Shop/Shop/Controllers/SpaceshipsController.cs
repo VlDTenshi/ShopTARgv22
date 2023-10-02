@@ -183,7 +183,15 @@ namespace Shop.Controllers
                 Company = vm.Company,
                 CargoWeight = vm.CargoWeight,
                 CreatedAt = vm.CreatedAt,
-                Modifieted = DateTime.Now,
+                Modifieted = vm.Modifieted,
+                Files = vm.Files,
+                Image = vm.FileToApiViewModels
+                    .Select(x => new FileToApiDto
+                    {
+                        Id=x.ImageId,
+                        ExistingFilePath = x.FilePath,
+                        SpaceshipId = x.SpaceshipId
+                    }).ToArray()
             };
             var result=await _spaceshipServices.Update(dto);
             if (result==null)
@@ -247,13 +255,13 @@ namespace Shop.Controllers
         [HttpPost]
         public async Task<IActionResult> RemoveImage(FileToApiViewModel vm)
         {
-            var dto = new FileToApiDto
+            var dto = new FileToApiDto()
             {
                 Id = vm.ImageId,
             };
             var image = await _fileServices.RemoveImageFromApi(dto);
 
-            if (image != null)
+            if (image == null)
             {
                 return RedirectToAction(nameof(Index));
             }
