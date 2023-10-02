@@ -13,7 +13,7 @@ namespace Shop.Core.ServiceInterface
         void FilesToApi(SpaceshipDto dto, Spaceship spaceship);
 
         //void FilesToApi(RealEstateDto dto, RealEstate realestate);
-
+        Task<List<FileToApi>> RemoveImagesFromApi(FileToApiDto[] dtos);
     }
   
         

@@ -74,7 +74,7 @@ namespace Shop.Controllers
                     .Select(x => new FileToApiDto
                     {
                         Id = x.Id,
-                        FilePathExistingFilePath = x.FilePath,
+                        ExistingFilePath = x.FilePath,
                         //1.filetoapidto 2.filetoapiviewmodel
                         RealsetateId = x.RealsetateId,
                     }).ToArray()
