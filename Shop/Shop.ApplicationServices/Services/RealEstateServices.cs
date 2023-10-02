@@ -14,12 +14,12 @@ namespace Shop.ApplicationServices.Services
     public class RealEstateServices : IRealEstateServices
     {
         private readonly ShopContext _context;
-        private readonly IFileServices _fileServices;
+        private readonly IFileServicesI _fileServices;
 
         public RealEstateServices
             (
                 ShopContext context,
-            IFileServices fileServices
+            IFileServicesI fileServices
             )
         {
             _context = context;
@@ -39,12 +39,12 @@ namespace Shop.ApplicationServices.Services
             realEstate.BuiltInYear = DateTime.Now;
             realEstate.CreatedAt = DateTime.Now;
             realEstate.UpdatedAt = DateTime.Now;
-            _fileServices.FilesTiApi(dto, realestate);
+            _fileServices.FilesTiApi(dto, realEstate);
 
-            await _context.RealEstates.AddAsync(realestate);
+            await _context.RealEstates.AddAsync(realEstate);
             await _context.SaveChangesAsync();
 
-            return realestate;
+            return realEstate;
         }
         public async Task<RealEstate> Update(RealEstateDto dto)
         {
