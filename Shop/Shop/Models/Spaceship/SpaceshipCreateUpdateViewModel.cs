@@ -1,6 +1,6 @@
 ﻿namespace Shop.Models.Spaceship
 {
-    public class SpaceshipDetailsViewModel
+    public class SpaceshipCreateUpdateViewModel
     {
         public Guid? Id { get; set; }
 
@@ -18,9 +18,13 @@
 
         public int CargoWeight { get; set; }
 
+        public List<IFormFile> Files { get; set; }
 
         public List<FileToApiViewModel> FileToApiViewModels { get; set; }
-       = new List<FileToApiViewModel>();
+        = new List<FileToApiViewModel>();
+
+
+
         //only in database
 
         public DateTime CreatedAt { get; set; }
