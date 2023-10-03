@@ -69,15 +69,16 @@ namespace Shop.Controllers
                 BuildingType = vm.BuildingType,
                 BuiltinYear = vm.BuiltinYear,
                 
+                CreatedAt=vm.CreatedAt,
+                UpdatedAt=vm.UpdatedAt,
                 Files = vm.Files,
-                Image = vm.FileToApiViewModels
-                    .Select(x => new FileToApiDto
-                    {
-                        Id = x.Id,
-                        ExistingFilePath = x.FilePath,
-                        //1.filetoapidto 2.filetoapiviewmodel
-                        RealsetateId = x.RealsetateId,
-                    }).ToArray()
+                Image = vm.Image.Select(x=> new FileToDatabaseDto
+                {
+                    Id = x.ImageId,
+                    ImageData = x.ImageData,
+                    ImageTitle = x.ImageTitle,
+                    RealEstateId = x.RealEstateId
+                }).ToArray()
 
             };
 
@@ -103,14 +104,19 @@ namespace Shop.Controllers
                 return NotFound();
 
             }
-
-            var images = await _context.FileToApis
-                .Where(x => x.SpaceshipId == id)
-                .Select(y => new FileToApiRealViewModel
+            var photos = await _context.FileToDatabases
+                .Where(x => x.RealEstateId == id)
+                .Select(y => new ImageToDatabaseViewModel
                 {
-                    FilePath = y.ExistingFilePath,
-                    Id = y.Id
+
+                    RealEstateId = y.Id,
+                    ImageId = y.Id,
+                    ImageData = y.ImageData,
+                    ImageTitle = y.ImageTitle,
+                    Image = string.Format("data:image/gif;base,{0}", Convert.ToBase64String(y.ImageData))
+
                 }).ToArrayAsync();
+            
 
             var vm = new RealEstateDetailsViewModel();
 
@@ -126,7 +132,8 @@ namespace Shop.Controllers
      
             vm.CreatedAt = realestate.CreatedAt;
             vm.UpdatedAt = realestate.UpdatedAt;
-            vm.FileToApiViewModels.AddRange((IEnumerable<Models.Realestate.FileToApiRealViewModel>)images);
+            vm.Image.AddRange(photos);
+            
 
 
 
