@@ -19,14 +19,10 @@ namespace Shop.Core.Dto
 
         public DateTime BuiltinYear { get; set; }
 
+        public List<IFormFile>Files { get; set; }
+        public IEnumerable<FileToDatabaseDto> Image { get; set; } = new List<FileToDatabaseDto>();
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-
-        public List<IFormFile> Files { get; set; }
-
-        public IEnumerable<FileToApiDto> Image { get; set; }
-
-        = new List<FileToApiDto>();
     }
 }
