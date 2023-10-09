@@ -12,6 +12,7 @@ namespace Shop.Core.Dto
         public string ExistingFilePath { get; set; }    
         public Guid? SpaceshipId { get; set; }
 
-        public Guid? RealsetateId { get; set; }
+        //public Guid? RealEstateId { get; set; }
+        //public Guid? KindergardenId { get; set; }
     }
 }
