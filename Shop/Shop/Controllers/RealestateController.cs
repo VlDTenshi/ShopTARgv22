@@ -113,7 +113,7 @@ namespace Shop.Controllers
                     ImageId = y.Id,
                     ImageData = y.ImageData,
                     ImageTitle = y.ImageTitle,
-                    Image = string.Format("data:image/gif;base,{0}", Convert.ToBase64String(y.ImageData))
+                    Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(y.ImageData))
 
                 }).ToArrayAsync();
             
