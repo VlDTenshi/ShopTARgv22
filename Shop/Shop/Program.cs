@@ -21,7 +21,8 @@ builder.Services.AddScoped<ISpaceshipServices, SpaceshipServices>();
 builder.Services.AddScoped<IFileServices, FileServices>();
 //add dependence interface and service class
 builder.Services.AddScoped<IRealEstateServices, RealEstatesServices>();
-
+////add dependence interface and service class
+builder.Services.AddScoped<IKinderGardenServices, KinderGardenServices>();
 
 
 
