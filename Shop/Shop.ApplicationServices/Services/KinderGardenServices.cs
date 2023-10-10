@@ -34,7 +34,7 @@ namespace Shop.ApplicationServices.Services
             kindergarden.CreatedAt = DateTime.Now;
             kindergarden.UpdatedAt = DateTime.Now;
 
-            await _context.RealEstates.AddAsync(kindergarden);
+            await _context.Kindergardens.AddAsync(kindergarden);
             await _context.SaveChangesAsync();
 
 
@@ -58,7 +58,7 @@ namespace Shop.ApplicationServices.Services
 
             };
 
-            _context.RealEstates.Update(domain);
+            _context.Kindergardens.Update(domain);
             await _context.SaveChangesAsync();
 
 
@@ -66,10 +66,10 @@ namespace Shop.ApplicationServices.Services
         }
         public async Task<Kindergarden> Delete(Guid id)
         {
-            var kindergardenId = await _context.RealEstates
+            var kindergardenId = await _context.Kindergardens
                 .FirstOrDefaultAsync(x => x.Id == id);
 
-            _context.RealEstates.Remove(kindergardenId);
+            _context.Kindergardens.Remove(kindergardenId);
             await _context.SaveChangesAsync();
 
             return kindergardenId;
