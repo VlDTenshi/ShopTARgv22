@@ -131,5 +131,32 @@ namespace Shop.ApplicationServices.Services
                 }
             }
         }
+
+        public async Task<FileToDatabase>RemoveImageFromDatabase(FileToDatabaseDto dto)
+        {
+            var image = await _context.FileToDatabases
+                .Where(x=> x.Id == dto.Id)
+                .FirstOrDefaultAsync();
+
+            _context.FileToDatabases.Remove(image);
+            await _context.SaveChangesAsync();
+
+            return image;
+        }
+        //public async Task<List<FileToDatabase>> RemoveImagesFromDatabase(FileToDatabaseDto[] dtos)
+        //{
+        //    foreach(var d in dtos)
+        //    var imageId = await _context.FileToDatabases
+        //            .FirstOrDefaultAsync(x => x.ExistingFilePath == dtos.ExistingFilePath);
+        //    var filePath = _webHost.ContentRootPath + "\\multipleFileUpload\\" + imageId.ExistingFilePath;
+
+        //    if (File.Exists(filePath))
+        //    {
+        //        File.Delete(filePath);
+        //    }
+
+        //    _context.FileToApis.Remove(imageId);
+        //    await _context.SaveChangesAsync();
+        //}
     }
 }

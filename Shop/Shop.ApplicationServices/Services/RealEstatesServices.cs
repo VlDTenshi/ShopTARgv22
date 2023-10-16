@@ -74,6 +74,11 @@ namespace Shop.ApplicationServices.Services
 
             };
 
+            if (dto.Files != null)
+            {
+                _fileServices.UploadFilesToDatabase(dto, domain);
+            }
+
             _context.RealEstates.Update(domain);
             await _context.SaveChangesAsync();
 
