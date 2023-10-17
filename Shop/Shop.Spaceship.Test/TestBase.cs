@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Shop.ApplicationServices.Services;
 using Shop.Core.ServiceInterface;
 using Shop.Data;
+using Shop.Spaceship.Test.Mock;
+using Microsoft.Extensions.Hosting;
 
 namespace Shop.Spaceship.Test
 {
@@ -35,6 +37,8 @@ namespace Shop.Spaceship.Test
         public virtual void SetupServices(IServiceCollection services)
         {
             services.AddScoped<ISpaceshipServices, SpaceshipServices>();
+            services.AddScoped<IFileServices, FileServices>();
+            services.AddScoped<IHostEnvironment, MockHostEnvironment>();
 
             services.AddDbContext<ShopContext>(x =>
             {
