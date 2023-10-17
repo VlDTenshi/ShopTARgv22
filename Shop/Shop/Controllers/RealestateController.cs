@@ -288,15 +288,18 @@ namespace Shop.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-        //public async Task<IActionResult> RemoveImages(List<ImageToDatabaseViewModel> imageIds)
+        //public async Task<IActionResult> RemoveImages(List<int> imageIds)
         //{
-        //    var dto = imageIds.Select(imageId => new FileToDatabaseDto { Id = imageId }).ToList();
-
-        //    var removedImages = await _fileServices.RemoveImagesFromDatabase(dto);
-
-        //    if (removedImages.Count == 0)
+        //    if (imageIds != null && imageIds.Any())
         //    {
-        //        return RedirectToAction(nameof(Index));
+        //        foreach (int imageId in imageIds)
+        //        {
+        //            var dto = new FileToDatabaseDto
+        //            {
+        //                Id = imageId
+        //            };
+        //            await _fileServices.RemoveImageFromDatabase(dto);
+        //        }
         //    }
 
         //    return RedirectToAction(nameof(Index));
