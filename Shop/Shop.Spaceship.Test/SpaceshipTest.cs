@@ -28,5 +28,12 @@ namespace Shop.Spaceship.Test
             var result = await Svc<ISpaceshipServices>().Create(dto);
             Assert.NotNull(result);
         }
+        [Fact]
+        public async Task ShouldNot_GetByIdSpaceship_WhenReturnsNotEqual()
+        {
+            Guid guid = Guid.Parse("a1999241 - e62b - 4804 - 8c19 - 4f017de45914");
+            //kuidas teha automatselt guidi
+            Guid wrongGuid = Guid.Parse(Guid.NewGuid().ToString());
+        }
     }
 }
