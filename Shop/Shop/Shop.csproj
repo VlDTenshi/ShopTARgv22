@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shop.ApplicationServices\Shop.ApplicationServices.csproj" />
+    <ProjectReference Include="..\Shop.Core\Shop.Core.csproj" />
     <ProjectReference Include="..\Shop.Data\Shop.Data.csproj" />
   </ItemGroup>
 

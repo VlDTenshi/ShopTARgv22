@@ -10,11 +10,11 @@ using Microsoft.Extensions.Hosting;
 
 namespace Shop.Spaceship.Test
 {
-    public abstract class TestBase
+    public abstract class UnitTest2
     {
         protected IServiceProvider serviceProvider { get; }
 
-        protected TestBase() 
+        protected UnitTest2() 
         {
             var services = new ServiceCollection();
             SetupServices(services);
