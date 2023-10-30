@@ -28,7 +28,7 @@ namespace Shop.Kindergarden.Test
         [Fact]
         public async Task ShouldNot_GetByIdKindergarden_WhenReturnsNotEqual()
         {
-            Guid guid = Guid.Parse("a1999241 - e62b - 4804 - 8c19 - 4f017de45914");
+            Guid guid = Guid.Parse("a1999241-e62b-4804-8c19-4f017de45914");
             Guid wrongGuid = Guid.Parse(Guid.NewGuid().ToString());
             await Svc<IKinderGardenServices>().GetAsync(guid);
             Assert.NotEqual(guid, wrongGuid);
@@ -71,7 +71,7 @@ namespace Shop.Kindergarden.Test
 
             kindergarden.Id = Guid.Parse("9f0674c4-1ddc-4415-9ea2-a0502ac4913b");
             kindergarden.GroupName = "asdrd";
-            kindergarden.ChildrenCount = 1;
+            kindergarden.ChildrenCount = 123;
             kindergarden.KindergardenName = "Kinder";
             kindergarden.Teacher = "Asta";
             kindergarden.CreatedAt = DateTime.Now.AddYears(1);
