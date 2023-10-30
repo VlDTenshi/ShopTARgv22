@@ -95,8 +95,8 @@ namespace Shop.Kindergarden.Test
 
             Assert.Matches(updateKindergarden.GroupName, createKindergarden.GroupName);
             Assert.NotEqual(updateKindergarden.Teacher, createKindergarden.Teacher);
-            Assert.NotEqual(updateKindergarden.KindergardenName, createKindergarden.KinderGardenName);
-            Assert.DoesNotMatch(updateKindergarden.ChildrenCount.ToString(), createKindergarden.ChildCount.ToString());
+            Assert.NotEqual(updateKindergarden.KindergardenName, createKindergarden.KindergardenName);
+            Assert.DoesNotMatch(updateKindergarden.ChildrenCount.ToString(), createKindergarden.ChildrenCount.ToString());
         }
         [Fact]
         public async Task ShouldNot_UpdateKindergarden_WhenUpdateData()
