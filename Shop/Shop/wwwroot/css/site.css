@@ -1,3 +1,7 @@
+@import url("main.css");
+@import url("noscript.css");
+@import url("fontawesome-all.min.css");
+
 html {
   font-size: 14px;
 }
