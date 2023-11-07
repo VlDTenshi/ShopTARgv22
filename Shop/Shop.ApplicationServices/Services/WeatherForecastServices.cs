@@ -1,4 +1,5 @@
-﻿using Shop.Core.Dto.OpenWetaherDtos;
+﻿using Nancy.Json;
+using Shop.Core.Dto.OpenWetaherDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,16 @@ namespace Shop.ApplicationServices.Services
 
 			using (WebClient client = new WebClient())
 			{
+				string json = client.DownloadString(url);
+				OpenWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<OpenWeatherResponseRootDto>(json);
 
+				dto.City = weatherResult.Name;
+				dto.main_Temp = weatherResult.Main.main_Temp;
+				dto.main_Feels_like = weatherResult.Main.main_Feels_like;
+				dto.main_Humidity = weatherResult.Main.main_Humidity;
+				dto.main_Pressure = weatherResult.Main.main_Pressure;
+				dto.wind_Speed = weatherResult.Wind.wind_Speed;
+				dto.weather_Description = weatherResult.Weathers[0].weather_Description;
 			}
 			return dto;
 		}
