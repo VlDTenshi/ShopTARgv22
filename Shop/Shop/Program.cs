@@ -23,6 +23,8 @@ builder.Services.AddScoped<IFileServices, FileServices>();
 builder.Services.AddScoped<IRealEstateServices, RealEstatesServices>();
 ////add dependence interface and service class
 builder.Services.AddScoped<IKinderGardenServices, KinderGardenServices>();
+//add dependence interface and service class
+builder.Services.AddScoped<IWeatherForecastServices, WeatherForecastServices>();
 
 
 
