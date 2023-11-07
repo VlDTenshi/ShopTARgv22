@@ -30,6 +30,7 @@ namespace Shop.Core.Dto.OpenWetaherDtos
         public double wind_Gust { get; set; }
         public double rain_1h { get; set; }
         public int clouds_All { get; set; }
+        public double s_1h { get; set; }
         public int Dt { get; set; }
         public int sys_Type { get; set; }
         public int sys_Id { get; set; }

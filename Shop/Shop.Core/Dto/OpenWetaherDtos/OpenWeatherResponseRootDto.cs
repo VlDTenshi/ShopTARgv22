@@ -27,6 +27,8 @@ namespace Shop.Core.Dto.OpenWetaherDtos
 		public Wind Wind { get; set; }
 		[JsonPropertyName("clouds")]
 		public Clouds Clouds { get; set; }
+		[JsonPropertyName("snow")]
+		public Snow Snow { get; set; }
 		[JsonPropertyName("dt")]
 		public int Dt { get; set; }
 		[JsonPropertyName("sys")]
