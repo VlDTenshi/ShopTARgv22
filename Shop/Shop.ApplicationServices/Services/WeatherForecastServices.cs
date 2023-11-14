@@ -14,7 +14,7 @@ namespace Shop.ApplicationServices.Services
 	{
 		public async Task<OpenWeatherResultDto> OpenWeatherResult(OpenWeatherResultDto dto)
 		{
-			string idOpenWeather = "7a1e82109b389955967ad299cc91f8ff";
+			string idOpenWeather = "1b7d0b430317d9c04f417987a5935115";
 			string url = $"https://api.openweathermap.org/data/2.5/weather?q={dto.City}&units=metric&appid={idOpenWeather}";
 
 			using (WebClient client = new WebClient())
@@ -23,12 +23,12 @@ namespace Shop.ApplicationServices.Services
 				OpenWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<OpenWeatherResponseRootDto>(json);
 
 				dto.City = weatherResult.Name;
-				dto.main_Temp = weatherResult.Main.main_Temp;
-				dto.main_Feels_like = weatherResult.Main.main_Feels_like;
-				dto.main_Humidity = weatherResult.Main.main_Humidity;
-				dto.main_Pressure = weatherResult.Main.main_Pressure;
-				dto.wind_Speed = weatherResult.Wind.wind_Speed;
-				dto.weather_Description = weatherResult.Weathers[0].weather_Description;
+				dto.main_Temp = weatherResult.Main.Temp;
+				dto.main_Feels_like = weatherResult.Main.Feels_like;
+				dto.main_Humidity = weatherResult.Main.Humidity;
+				dto.main_Pressure = weatherResult.Main.Pressure;
+				dto.wind_Speed = weatherResult.Wind.Speed;
+				dto.weather_Description = weatherResult.Weather[0].Description;
 			}
 			return dto;
 		}

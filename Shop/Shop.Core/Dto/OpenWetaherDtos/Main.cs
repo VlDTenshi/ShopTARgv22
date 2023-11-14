@@ -5,20 +5,20 @@ namespace Shop.Core.Dto.OpenWetaherDtos
 	public class Main
 	{
 		[JsonPropertyName("temp")]
-		public double main_Temp { get; set; }
+		public double Temp { get; set; }
 		[JsonPropertyName("feels_like")]
-		public double main_Feels_like { get; set; }
+		public double Feels_like { get; set; }
 		[JsonPropertyName("temp_min")]
-		public double main_Temp_min { get; set; }
+		public double Temp_min { get; set; }
 		[JsonPropertyName("temp_max")]
-		public double main_Temp_max { get; set; }
+		public double Temp_max { get; set; }
 		[JsonPropertyName("pressure")]
-		public int main_Pressure { get; set; }
+		public int Pressure { get; set; }
 		[JsonPropertyName("humidity")]
-		public int main_Humidity { get; set; }
+		public int Humidity { get; set; }
 		[JsonPropertyName("sea_level")]
-		public double main_Sea_level { get; set; }
+		public double Sea_level { get; set; }
 		[JsonPropertyName("grnd_level")]
-		public double main_Grnd_level { get; set; }
+		public double Grnd_level { get; set; }
 	}
 }

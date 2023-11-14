@@ -14,9 +14,9 @@ namespace Shop.Core.Dto.OpenWetaherDtos
         [JsonPropertyName("coord")]
         public Coord Coord { get; set; }
 		[JsonPropertyName("weather")]
-		public List<Weather> Weathers { get; set; }
+		public List<Weather> Weather { get; set; }
 		[JsonPropertyName("base")]
-		public string @base {  get; set; }
+		public string Base {  get; set; }
 		[JsonPropertyName("main")]
 		public Main Main { get; set; }
 		[JsonPropertyName("visibility")]

@@ -9,7 +9,7 @@ namespace Shop.Core.Dto.OpenWetaherDtos
 		[JsonPropertyName("main")]
 		public string Main { get; set; }
 		[JsonPropertyName("description")]
-		public string weather_Description { get; set; }
+		public string Description { get; set; }
 		[JsonPropertyName("icon")]
 		public string weather_Icon { get; set; }
 	}

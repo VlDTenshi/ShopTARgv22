@@ -5,6 +5,6 @@ namespace Shop.Core.Dto.OpenWetaherDtos
 	public class Rain
 	{
 		[JsonPropertyName("1h")]
-		public double rain_1h { get; set; }
+		public double _1h { get; set; }
 	}
 }
