@@ -18,7 +18,7 @@ namespace Shop.Controllers
 			return View();
 		}
 		[HttpPost]
-		public IActionResult SearchJoke(SearchChuckNorrisJoke model)
+		public IActionResult SearchJoke(OpenChuckNorrisViewModel model)
 		{
 			if (ModelState.IsValid)
 			{

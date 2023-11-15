@@ -9,7 +9,7 @@ namespace Shop.Core.ServiceInterface
 {
 	public interface IChuckNorrisServices
 	{
-		Task<OpenChuckNorrisResultDto> OpenChuckNorrisResult(OpenChuckNorrisResultDto dto);
+		Task<OpenChuckNorrisResultDto> ChuckNorrisResult(OpenChuckNorrisResultDto dto);
 
 	}
 }

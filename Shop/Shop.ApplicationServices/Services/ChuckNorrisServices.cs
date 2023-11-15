@@ -14,9 +14,9 @@ namespace Shop.ApplicationServices.Services
 {
 	public class ChuckNorrisServices: IChuckNorrisServices
 	{
-		public async Task<OpenChuckNorrisResultDto>OpenChuckNorrisResult(OpenChuckNorrisResultDto dto)
+		public async Task<OpenChuckNorrisResultDto>ChuckNorrisResult(OpenChuckNorrisResultDto dto)
 		{
-			string url = $"https://api.chucknorris.io/jokes/random";
+			var url = "https://api.chucknorris.io/jokes/random";
 
 			using (WebClient client = new WebClient())
 			{
@@ -30,6 +30,7 @@ namespace Shop.ApplicationServices.Services
 				dto.Url = jokeResult.Url;
 				dto.Value = jokeResult.Value;
 			}
+			return dto;
 		}
 	}
 }
