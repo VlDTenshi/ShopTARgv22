@@ -21,7 +21,7 @@ namespace Shop.ApplicationServices.Services
 			using (WebClient client = new WebClient())
 			{
 				string json = client.DownloadString(url);
-				openChuckNorrisResponseRootDto jokeResult = new JavaScriptSerializer().Deserialize<openChuckNorrisResponseRootDto>(json);
+				OpenChuckNorrisResponseRootDto jokeResult = new JavaScriptSerializer().Deserialize<OpenChuckNorrisResponseRootDto>(json);
 				//dto.Categories = jokeResult.Categories;
 				dto.Created_at = jokeResult.CreatedAt;
 				dto.Icon_url = jokeResult.Iconurl;

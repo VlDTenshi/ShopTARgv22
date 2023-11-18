@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Core.Dto.Chuck
 {
-	public class openChuckNorrisResponseRootDto
+	public class OpenChuckNorrisResponseRootDto
 	{
 		[JsonPropertyName("categories")]
 		public List<string> Categories { get; set; }
