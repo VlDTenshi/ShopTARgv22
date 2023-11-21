@@ -22,9 +22,13 @@ namespace Shop.Controllers
 		{
 			if(ModelState.IsValid)
 			{
-				return RedirectToAction("Drink","Drinks", new {drink = model.strDrink});
+				return RedirectToAction("Drink","Coctails", new {drink = model.strDrink});
 			}
-			return View(model);
+
+            // Установить сообщение об ошибке для отображения на форме
+            ViewData["ErrorMessage"] = "Please fill in the search field.";
+
+            return View(model);
 		}
 		[HttpGet]
 		public IActionResult Drink(string drink) 
