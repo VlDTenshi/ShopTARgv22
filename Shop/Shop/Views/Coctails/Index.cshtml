@@ -1,0 +1,20 @@
+﻿@model Shop.Models.Coctails.SearchCoctailViewModel
+
+<h1>Search Drink</h1>
+<div class="container">
+    <form method="post">
+        <div class="container">
+            <div class="form-group offset-md-3 col-md-5">
+                <h2>Search the coctail in a drink list</h2>
+                <label asp-for="strDrink" style="font-family: Arial"></label>
+                <input asp-for="strDrink" class="form-control" style="background-color:bisque" />
+                <span asp-validation-for="strDrink" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group offset-md-3 col-md-5">
+                <button asp-controller="Coctail" asp-action="SearchDrink" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</div>

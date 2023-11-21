@@ -9,8 +9,8 @@ namespace Shop.Core.Dto.Chuck
 {
 	public class ChuckNorrisResponseRootDto
 	{
-		[JsonPropertyName("categories")]
-		public List<string> Categories { get; set; }
+		//[JsonPropertyName("categories")]
+		//public List<string> Categories { get; set; }
 		[JsonPropertyName("created_at")]
 		public string CreatedAt { get; set; }
 		[JsonPropertyName("icon_url")]

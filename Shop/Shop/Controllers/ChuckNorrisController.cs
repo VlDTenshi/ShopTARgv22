@@ -6,10 +6,10 @@ using Shop.Models.OpenWeathers;
 
 namespace Shop.Controllers
 {
-	public class ChuckNorrisJokeController : Controller
+	public class ChuckNorrisController : Controller
 	{
 		private readonly IChuckNorrisServices _chuckNorrisServices;
-		public ChuckNorrisJokeController(IChuckNorrisServices chuckNorrisServices)
+		public ChuckNorrisController(IChuckNorrisServices chuckNorrisServices)
 		{
 			_chuckNorrisServices = chuckNorrisServices;
 		}
