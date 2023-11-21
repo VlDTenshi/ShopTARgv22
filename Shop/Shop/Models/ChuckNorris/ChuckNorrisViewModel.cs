@@ -1,6 +1,6 @@
 ﻿namespace Shop.Models.ChuckNorris
 {
-	public class OpenChuckNorrisViewModel
+	public class ChuckNorrisViewModel
 	{
 		public string Categories { get; set; }
 		public string Created_at { get; set; }

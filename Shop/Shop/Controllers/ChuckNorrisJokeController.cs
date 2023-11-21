@@ -6,10 +6,10 @@ using Shop.Models.OpenWeathers;
 
 namespace Shop.Controllers
 {
-	public class OpenChuckNorrisJokeController : Controller
+	public class ChuckNorrisJokeController : Controller
 	{
 		private readonly IChuckNorrisServices _chuckNorrisServices;
-		public OpenChuckNorrisJokeController(IChuckNorrisServices chuckNorrisServices)
+		public ChuckNorrisJokeController(IChuckNorrisServices chuckNorrisServices)
 		{
 			_chuckNorrisServices = chuckNorrisServices;
 		}
@@ -19,19 +19,19 @@ namespace Shop.Controllers
 			return View();
 		}
 		[HttpPost]
-		public IActionResult SearchJoke(OpenChuckNorrisViewModel model)
+		public IActionResult SearchJoke(ChuckNorrisViewModel model)
 		{
 			return RedirectToAction("Joke", "ChuckNorris");
 		}
 		[HttpGet]
 		public IActionResult Joke()
 		{
-			OpenChuckNorrisResultDto dto = new();
+			ChuckNorrisResultDto dto = new();
 
 			_chuckNorrisServices.ChuckNorrisResult(dto);
-			OpenChuckNorrisViewModel vm = new();
+			ChuckNorrisViewModel vm = new();
 
-			vm.Categories = dto.Categories;
+			//vm.Categories = dto.Categories;
 			vm.Created_at = dto.Created_at;
 			vm.Icon_url = dto.Icon_url;
 			vm.Id = dto.Id;

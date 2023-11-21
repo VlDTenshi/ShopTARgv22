@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Shop.Core.Dto.Chuck
 {
-	public class OpenChuckNorrisResultDto
+	public class ChuckNorrisResultDto
 	{
 		public string Categories { get; set; }
 		public string Created_at { get; set; }
