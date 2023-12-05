@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shop.Core.Dto.AccuWeatherDtos
+﻿namespace Shop.Models.AccuWeathers
 {
-    public class AccuWeatherResultDto
+    public class AccuWeatherViewModel
     {
         public string Key { get; set; }
         public string Type { get; set; }

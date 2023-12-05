@@ -17,14 +17,15 @@ namespace Shop.ApplicationServices.Services
         {
             try { 
             string idOpenWeather = "giZzxuVGA97pu2AWn1x6Ira5M2073g6C";
-            string localizedName = "Tallinn";
-            string url = $"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={idOpenWeather}&q={localizedName}";
+            //string localizedName = "Tallinn";
+            string url = $"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={idOpenWeather}&q={dto.LocalizedName}";
             using (WebClient client = new WebClient())
             {
                 string json = client.DownloadString(url);
                 AccuWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<AccuWeatherResponseRootDto>(json);
 
                 dto.Key = weatherResult.Key;
+                //dto.LocalizedName = weatherResult.LocalizedName;
             }
             return dto;
         }
@@ -42,22 +43,27 @@ namespace Shop.ApplicationServices.Services
                 {
 
                     string idOpenWeather = "giZzxuVGA97pu2AWn1x6Ira5M2073g6C";
-                    string url = $"http://dataservice.accuweather.com/forecasts/v1/daily/1day/{dto.Key}?apikey={idOpenWeather}";
+                    string url = $"http://dataservice.accuweather.com/forecasts/v1/daily/1day/{dto.Key}?apikey={idOpenWeather}&metric=true";
                     using (WebClient client = new WebClient())
-            {
+                    {
                         string json = client.DownloadString(url);
                         AccuWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<AccuWeatherResponseRootDto>(json);
 
-                
+                        //dto.Key = weatherResult.Key;
+                        dto.LocalizedName = weatherResult.LocalizedName;
+                        dto.Date = weatherResult.Date;
+                        dto.Value = weatherResult.Value;
+                        dto._Value = weatherResult.Value1;
+                        dto.EpochDate = weatherResult.EpochDate;           
+                    }
                 }
-            }
-            return dto;
-            }
-        catch (Exception ex)
-            {
-                // Обработка ошибок, например, выброс исключения
                 return dto;
-            }
+                }
+            catch (Exception ex)
+                {
+                    // Обработка ошибок, например, выброс исключения
+                    return dto;
+                }
         }
     }
 }

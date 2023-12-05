@@ -1,11 +1,10 @@
+global using Shop.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Shop.ApplicationServices.Services;
 using Shop.Core.Domain;
 using Shop.Core.ServiceInterface;
 using Shop.Data;
-
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,8 +26,8 @@ builder.Services.AddScoped<IKinderGardenServices, KinderGardenServices>();
 builder.Services.AddScoped<IWeatherForecastServices, WeatherForecastServices>();
 builder.Services.AddScoped<IChuckNorrisServices, ChuckNorrisServices>();
 builder.Services.AddScoped<ICoctailServices, CoctailServices>();
-
-
+builder.Services.AddScoped<IAccuWeatherServices, AccuWeatherServices>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 
 var app = builder.Build();
