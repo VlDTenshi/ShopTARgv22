@@ -10,7 +10,7 @@ namespace Shop.Core.ServiceInterface
 {
     public interface IAccuWeatherServices
     {
-        Task<AccuWeatherResultDto>GetCityKeyAsync(AccuWeatherResultDto dto);
+        //Task<AccuWeatherResultDto>GetCityKeyAsync(AccuWeatherResultDto dto);
         Task<AccuWeatherResultDto> AccuWeatherResult(AccuWeatherResultDto dto);
     }
 }

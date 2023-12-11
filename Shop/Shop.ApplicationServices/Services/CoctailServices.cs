@@ -14,7 +14,8 @@ namespace Shop.ApplicationServices.Services
 	{
 		public async Task<CoctailResultDto>CoctailResult(CoctailResultDto dto)
 		{
-			string url = $"https://www.thecocktaildb.com/api/json/v1/1/search.php?s={dto.strDrink}";
+			string idCoctailAPI = "1";
+			string url = $"https://www.thecocktaildb.com/api/json/v1/{idCoctailAPI}/search.php?s={dto.strDrink}";
 
 			using (WebClient client = new WebClient())
 			{

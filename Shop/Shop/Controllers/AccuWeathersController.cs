@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using Shop.Core.Dto.AccuWeatherDtos;
 using Shop.Core.ServiceInterface;
 using Shop.Models.AccuWeathers;
@@ -11,10 +12,7 @@ namespace Shop.Controllers
         public AccuWeathersController (IAccuWeatherServices accuWeatherServices)
         {
             _accuWeatherServices = accuWeatherServices;
-        }
-        public IActionResult Index()
-        {
-            return View();
+
         }
         [HttpPost]
         public IActionResult SearchCity(SearchCityViewModel model)
@@ -32,19 +30,24 @@ namespace Shop.Controllers
         [HttpGet]
         public IActionResult City(string localizedName)
         {
-            AccuWeatherResultDto dto = new();
+            AccuWeatherResultDto dto = new AccuWeatherResultDto();
             dto.LocalizedName = localizedName;
 
             _accuWeatherServices.AccuWeatherResult(dto);
-            AccuWeatherViewModel vm = new();
+            AccuWeatherViewModel vm = new AccuWeatherViewModel
+            {
 
-            vm.LocalizedName = dto.LocalizedName;
-            vm.Date = dto.Date;
-            vm.Value = dto.Value;
-            vm._Value = dto._Value;
-            vm.EpochDate = dto.EpochDate;
+            LocalizedName = dto.LocalizedName,
+			Minimum = dto.Minimum,
+			Maximum = dto.Maximum,
+			Link = dto.Link,
 
+			};
             return View(vm);
         }
-    }
+		public IActionResult Index()
+		{
+			return View();
+		}
+	}
 }

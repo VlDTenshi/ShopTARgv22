@@ -13,10 +13,6 @@ namespace Shop.Controllers
 		{
 			_coctailServices = coctailServices;
 		}
-		public IActionResult Index()
-		{
-			return View();
-		}
 		[HttpPost]
 		public IActionResult SearchDrink(SearchCoctailViewModel model) 
 		{
@@ -92,6 +88,10 @@ namespace Shop.Controllers
 			vm.dateModified = dto.dateModified;
 
 			return View(vm);
+		}
+		public IActionResult Index()
+		{
+			return View();
 		}
 	}
 }

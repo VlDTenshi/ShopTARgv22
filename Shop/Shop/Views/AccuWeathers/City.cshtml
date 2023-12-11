@@ -9,20 +9,16 @@
     </h2>
     <hr />
     <div class="form-group row">
-        <label asp-for="Date" class="col-sm-2 col-form-label"></label>
-        @Html.DisplayFor(model => model.Date)
+        <label asp-for="Maximum" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model => model.Maximum) °С
     </div>
     <div class="form-group row">
-        <label asp-for="Temperature1.Minimum" class="col-sm-2 col-form-label"></label>
-        @Html.DisplayFor(model => model.Temperature1.Minimum) °С
+        <label asp-for="Minimum" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model => model.Minimum) °С
     </div>
     <div class="form-group row">
-        <label asp-for="Temperature1.Maximum" class="col-sm-2 col-form-label"></label>
-        @Html.DisplayFor(model => model.Temperature1.Maximum) °С
-    </div>
-    <div class="form-group row">
-        <label asp-for="EpochDate" class="col-sm-2 col-form-label"></label>
-        @Html.DisplayFor(model => model.EpochDate) 
+        <label asp-for="Link" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model => model.Link)
     </div>
     <div><a asp-action="index" class="btn btn-primary">Back</a></div>
 </div>

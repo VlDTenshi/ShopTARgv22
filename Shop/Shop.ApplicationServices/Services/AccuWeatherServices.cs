@@ -1,4 +1,5 @@
-﻿using Nancy.Json;
+﻿using Nancy;
+using Nancy.Json;
 using Shop.Core.Dto.AccuWeatherDtos;
 using Shop.Core.Dto.OpenWetaherDtos;
 using Shop.Core.ServiceInterface;
@@ -13,57 +14,59 @@ namespace Shop.ApplicationServices.Services
 {
     public class AccuWeatherServices : IAccuWeatherServices
     {
-        public async Task<AccuWeatherResultDto> GetCityKeyAsync(AccuWeatherResultDto dto)
-        {
-            try { 
-            string idOpenWeather = "giZzxuVGA97pu2AWn1x6Ira5M2073g6C";
-            //string localizedName = "Tallinn";
-            string url = $"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={idOpenWeather}&q={dto.LocalizedName}";
-            using (WebClient client = new WebClient())
-            {
-                string json = client.DownloadString(url);
-                AccuWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<AccuWeatherResponseRootDto>(json);
+        //public async Task<AccuWeatherResultDto> GetCityKeyAsync(AccuWeatherResultDto dto)
+        //{
+        //    try { 
+        //    string idOpenWeather = "giZzxuVGA97pu2AWn1x6Ira5M2073g6C";
+        //    //string localizedName = "Tallinn";
+        //    string url = $"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={idOpenWeather}&q={dto.LocalizedName}";
+        //    using (WebClient client = new WebClient())
+        //    {
+        //        string json = client.DownloadString(url);
+        //        AccuWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<AccuWeatherResponseRootDto>(json);
 
-                dto.Key = weatherResult.Key;
-                //dto.LocalizedName = weatherResult.LocalizedName;
-            }
-            return dto;
-        }
-        catch (Exception ex)
-        {
-            // Обработка ошибок, например, выброс исключения
-            return dto;
-        }
-}
+        //        dto.Key = weatherResult.Key;
+        //        //dto.LocalizedName = weatherResult.LocalizedName;
+        //    }
+        //    return dto;
+        //}
+        //catch (Exception ex)
+        //{
+        //    // Обработка ошибок, например, выброс исключения
+        //    return dto;
+        //}
+
         public async Task<AccuWeatherResultDto> AccuWeatherResult(AccuWeatherResultDto dto)
         {
-            try
+            string idOpenWeather = "giZzxuVGA97pu2AWn1x6Ira5M2073g6C";
+
+            using (WebClient client = new WebClient())
             {
-                if (!string.IsNullOrEmpty(dto.Key))
-                {
+                string url = $"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={idOpenWeather}&q={dto.LocalizedName}";
 
-                    string idOpenWeather = "giZzxuVGA97pu2AWn1x6Ira5M2073g6C";
-                    string url = $"http://dataservice.accuweather.com/forecasts/v1/daily/1day/{dto.Key}?apikey={idOpenWeather}&metric=true";
-                    using (WebClient client = new WebClient())
-                    {
-                        string json = client.DownloadString(url);
-                        AccuWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<AccuWeatherResponseRootDto>(json);
 
-                        //dto.Key = weatherResult.Key;
-                        dto.LocalizedName = weatherResult.LocalizedName;
-                        dto.Date = weatherResult.Date;
-                        dto.Value = weatherResult.Value;
-                        dto._Value = weatherResult.Value1;
-                        dto.EpochDate = weatherResult.EpochDate;           
-                    }
-                }
-                return dto;
-                }
-            catch (Exception ex)
+                try
                 {
-                    // Обработка ошибок, например, выброс исключения
-                    return dto;
+                    string json = client.DownloadString(url);
+                    AccuWeatherResponseRootDto weatherResult = new JavaScriptSerializer().Deserialize<List<AccuWeatherResponseRootDto>>(json).FirstOrDefault();
+
+                    dto.Key = weatherResult.Key;
+
+                    string forecastUrl = $"http://dataservice.accuweather.com/forecasts/v1/daily/1day/{dto.Key}?apikey={idOpenWeather}&metric=true";
+                    string forecastJson = client.DownloadString(forecastUrl);
+                    AccuWeatherForecastResponseRoot forecastResult = new JavaScriptSerializer().Deserialize<AccuWeatherForecastResponseRoot>(forecastJson);
+
+                    dto.Minimum = forecastResult.DailyForecasts.FirstOrDefault().Temperature.Minimum.Value;
+                    dto.Maximum = forecastResult.DailyForecasts.FirstOrDefault().Temperature.Maximum.Value;
+                    dto.Link = forecastResult.DailyForecasts.FirstOrDefault().Link;
+
                 }
+                catch (WebException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+            return dto;
         }
     }
 }

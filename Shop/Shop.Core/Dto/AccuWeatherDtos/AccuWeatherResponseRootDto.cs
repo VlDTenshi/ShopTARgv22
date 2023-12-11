@@ -10,262 +10,378 @@ using static Shop.Core.Dto.AccuWeatherDtos.AccuWeatherResultDto;
 namespace Shop.Core.Dto.AccuWeatherDtos
 {
     public class AccuWeatherResponseRootDto
-    {
+	{
+		[JsonPropertyName("Key")]
+		public string Key { get; set; }
+
+		[JsonPropertyName("ID")]
+		public string ID { get; set; }
+
+		[JsonPropertyName("LocalizedName")]
+		public string LocalizedName { get; set; }
+
+		[JsonPropertyName("EnglishName")]
+		public string EnglishName { get; set; }
+
+		[JsonPropertyName("Level")]
+		public int Level { get; set; }
+
+		[JsonPropertyName("LocalizedType")]
+		public string LocalizedType { get; set; }
+
+		[JsonPropertyName("EnglishType")]
+		public string EnglishType { get; set; }
+
+		[JsonPropertyName("CountryID")]
+		public string CountryID { get; set; }
+
+		[JsonPropertyName("Date")]
+		public DateTime Date { get; set; }
+
+		[JsonPropertyName("EpochDate")]
+		public int EpochDate { get; set; }
+
+		[JsonPropertyName("Temperature")]
+		public Temperature Temperature { get; set; }
+
+		[JsonPropertyName("Day")]
+		public Day Day { get; set; }
+
+		[JsonPropertyName("Night")]
+		public Night Night { get; set; }
+
+		[JsonPropertyName("Sources")]
+		public List<string> Sources { get; set; }
+
+		[JsonPropertyName("MobileLink")]
+		public string MobileLink { get; set; }
+
+		[JsonPropertyName("Link")]
+		public string Link { get; set; }
+
+		[JsonPropertyName("Icon")]
+		public int Icon { get; set; }
+
+		[JsonPropertyName("IconPhrase")]
+		public string IconPhrase { get; set; }
+
+		[JsonPropertyName("HasPrecipitation")]
+		public bool HasPrecipitation { get; set; }
+
+		[JsonPropertyName("PrecipitationType")]
+		public string PrecipitationType { get; set; }
+
+		[JsonPropertyName("PrecipitationIntensity")]
+		public string PrecipitationIntensity { get; set; }
+
+		[JsonPropertyName("Metric")]
+		public Metric Metric { get; set; }
+
+		[JsonPropertyName("Imperial")]
+		public Imperial Imperial { get; set; }
+
+		[JsonPropertyName("Latitude")]
+		public double Latitude { get; set; }
+
+		[JsonPropertyName("Longitude")]
+		public double Longitude { get; set; }
+
+		[JsonPropertyName("Elevation")]
+		public Elevation Elevation { get; set; }
+
+		[JsonPropertyName("EffectiveDate")]
+		public DateTime EffectiveDate { get; set; }
+
+		[JsonPropertyName("EffectiveEpochDate")]
+		public int EffectiveEpochDate { get; set; }
+
+		[JsonPropertyName("Severity")]
+		public int Severity { get; set; }
+
+		[JsonPropertyName("Text")]
+		public string Text { get; set; }
+
+		[JsonPropertyName("Category")]
+		public string Category { get; set; }
+
+		[JsonPropertyName("EndDate")]
+		public DateTime EndDate { get; set; }
+
+		[JsonPropertyName("EndEpochDate")]
+		public int EndEpochDate { get; set; }
+
+		[JsonPropertyName("Value")]
+		public int Value { get; set; }
+
+		[JsonPropertyName("Unit")]
+		public string Unit { get; set; }
+
+		[JsonPropertyName("UnitType")]
+		public int UnitType { get; set; }
+
+		[JsonPropertyName("Minimum")]
+		public Minimum Minimum { get; set; }
+
+		[JsonPropertyName("Maximum")]
+		public Maximum Maximum { get; set; }
+
+		[JsonPropertyName("Code")]
+		public string Code { get; set; }
+
+		[JsonPropertyName("Name")]
+		public string Name { get; set; }
+
+		[JsonPropertyName("GmtOffset")]
+		public int GmtOffset { get; set; }
+
+		[JsonPropertyName("IsDaylightSaving")]
+		public bool IsDaylightSaving { get; set; }
+
+		[JsonPropertyName("NextOffsetChange")]
+		public DateTime NextOffsetChange { get; set; }
+	}
 
 
-        [JsonPropertyName("key")]
-        public string Key { get; set; }
-        [JsonPropertyName("localizedname")]
-        public string LocalizedName { get; set; }
-        [JsonPropertyName("region")]
-        public Region Region { get; set; }
-        [JsonPropertyName("country")]
-        public Country Country { get; set; }
-        [JsonPropertyName("administrativearea")]
-        public AdministrativeArea AdministrativeArea { get; set; }
-        [JsonPropertyName("timezone")]
-        public Time_Zone Time_Zone { get; set; }
-        [JsonPropertyName("geoposition")]
-        public Geoposition Geoposition { get; set; }
-        [JsonPropertyName("elevation")]
-        public Elevation Elevation { get; set; }
-        [JsonPropertyName("metric")]
-        public Metric Metric { get; set; }
-        [JsonPropertyName("imperial")]
-        public Imperial Imperial { get; set; }
-        [JsonPropertyName("supplementaladminareas")]
-        public Supplementaladminareas Supplementaladminareas { get; set; }
-        [JsonPropertyName("datasets")]
-        public Datasets Datasets{ get; set; }
-        [JsonPropertyName("Date")]
-        public DateTime Date { get; set; }
 
-        [JsonPropertyName("EpochDate")]
-        public int EpochDate { get; set; }
+	public class AdministrativeArea
+	{
+		[JsonPropertyName("ID")]
+		public string ID { get; set; }
 
-        [JsonPropertyName("Temperature")]
-        public Temperature Temperature1 { get; set; }
+		[JsonPropertyName("LocalizedName")]
+		public string LocalizedName { get; set; }
 
-        [JsonPropertyName("Day")]
-        public Day Day1 { get; set; }
+		[JsonPropertyName("EnglishName")]
+		public string EnglishName { get; set; }
 
-        [JsonPropertyName("Night")]
-        public Night Night1 { get; set; }
+		[JsonPropertyName("Level")]
+		public int Level { get; set; }
 
-        [JsonPropertyName("Sources")]
-        public List<string> Sources { get; set; }
+		[JsonPropertyName("LocalizedType")]
+		public string LocalizedType { get; set; }
 
-        [JsonPropertyName("MobileLink")]
-        public string MobileLink { get; set; }
+		[JsonPropertyName("EnglishType")]
+		public string EnglishType { get; set; }
 
-        [JsonPropertyName("Link")]
-        public string Link { get; set; }
-        public  class DailyForecast 
-        {
-            [JsonPropertyName("Date")]
-            public DateTime Date { get; set; }
+		[JsonPropertyName("CountryID")]
+		public string CountryID { get; set; }
+	}
+	public class Country
+	{
+		[JsonPropertyName("ID")]
+		public string ID { get; set; }
 
-            [JsonPropertyName("EpochDate")]
-            public int EpochDate { get; set; }
+		[JsonPropertyName("LocalizedName")]
+		public string LocalizedName { get; set; }
 
-            [JsonPropertyName("Temperature")]
-            public Temperature Temperature { get; set; }
+		[JsonPropertyName("EnglishName")]
+		public string EnglishName { get; set; }
+	}
 
-            [JsonPropertyName("Day")]
-            public Day Day { get; set; }
+	public class DailyForecast
+	{
+		[JsonPropertyName("Date")]
+		public DateTime Date { get; set; }
 
-            [JsonPropertyName("Night")]
-            public Night Night { get; set; }
+		[JsonPropertyName("EpochDate")]
+		public int EpochDate { get; set; }
 
-            [JsonPropertyName("Sources")]
-            public List<string> Sources { get; set; }
+		[JsonPropertyName("Temperature")]
+		public Temperature Temperature { get; set; }
 
-            [JsonPropertyName("MobileLink")]
-            public string MobileLink { get; set; }
+		[JsonPropertyName("Day")]
+		public Day Day { get; set; }
 
-            [JsonPropertyName("Link")]
-            public string Link { get; set; }
-        }
-        [JsonPropertyName("Icon")]
-        public int Icon2 { get; set; }
+		[JsonPropertyName("Night")]
+		public Night Night { get; set; }
 
-        [JsonPropertyName("IconPhrase")]
-        public string IconPhrase2 { get; set; }
+		[JsonPropertyName("Sources")]
+		public List<string> Sources { get; set; }
 
-        [JsonPropertyName("HasPrecipitation")]
-        public bool HasPrecipitation2 { get; set; }
+		[JsonPropertyName("MobileLink")]
+		public string MobileLink { get; set; }
 
-        [JsonPropertyName("PrecipitationType")]
-        public string PrecipitationType2 { get; set; }
+		[JsonPropertyName("Link")]
+		public string Link { get; set; }
+	}
 
-        [JsonPropertyName("PrecipitationIntensity")]
-        public string PrecipitationIntensity2 { get; set; }
-        public class Day
-        {
-            [JsonPropertyName("Icon")]
-            public int Icon { get; set; }
+	public class Day
+	{
+		[JsonPropertyName("Icon")]
+		public int Icon { get; set; }
 
-            [JsonPropertyName("IconPhrase")]
-            public string IconPhrase { get; set; }
+		[JsonPropertyName("IconPhrase")]
+		public string IconPhrase { get; set; }
 
-            [JsonPropertyName("HasPrecipitation")]
-            public bool HasPrecipitation { get; set; }
+		[JsonPropertyName("HasPrecipitation")]
+		public bool HasPrecipitation { get; set; }
 
-            [JsonPropertyName("PrecipitationType")]
-            public string PrecipitationType { get; set; }
+		[JsonPropertyName("PrecipitationType")]
+		public string PrecipitationType { get; set; }
 
-            [JsonPropertyName("PrecipitationIntensity")]
-            public string PrecipitationIntensity { get; set; }
-        }
-        [JsonPropertyName("EffectiveDate")]
-        public DateTime EffectiveDate { get; set; }
+		[JsonPropertyName("PrecipitationIntensity")]
+		public string PrecipitationIntensity { get; set; }
+	}
 
-        [JsonPropertyName("EffectiveEpochDate")]
-        public int EffectiveEpochDate { get; set; }
+	public class Elevation
+	{
+		[JsonPropertyName("Metric")]
+		public Metric Metric { get; set; }
 
-        [JsonPropertyName("Severity")]
-        public int Severity { get; set; }
+		[JsonPropertyName("Imperial")]
+		public Imperial Imperial { get; set; }
+	}
 
-        [JsonPropertyName("Text")]
-        public string Text { get; set; }
+	public class GeoPosition
+	{
+		[JsonPropertyName("Latitude")]
+		public double Latitude { get; set; }
 
-        [JsonPropertyName("Category")]
-        public string Category { get; set; }
+		[JsonPropertyName("Longitude")]
+		public double Longitude { get; set; }
 
-        [JsonPropertyName("EndDate")]
-        public DateTime EndDate { get; set; }
+		[JsonPropertyName("Elevation")]
+		public Elevation Elevation { get; set; }
+	}
 
-        [JsonPropertyName("EndEpochDate")]
-        public int EndEpochDate { get; set; }
+	public class Headline
+	{
+		[JsonPropertyName("EffectiveDate")]
+		public DateTime EffectiveDate { get; set; }
 
-        [JsonPropertyName("MobileLink")]
-        public string MobileLink1 { get; set; }
+		[JsonPropertyName("EffectiveEpochDate")]
+		public int EffectiveEpochDate { get; set; }
 
-        [JsonPropertyName("Link")]
-        public string Link1 { get; set; }
-        public class Headline
-        {
-            [JsonPropertyName("EffectiveDate")]
-            public DateTime EffectiveDate { get; set; }
+		[JsonPropertyName("Severity")]
+		public int Severity { get; set; }
 
-            [JsonPropertyName("EffectiveEpochDate")]
-            public int EffectiveEpochDate { get; set; }
+		[JsonPropertyName("Text")]
+		public string Text { get; set; }
 
-            [JsonPropertyName("Severity")]
-            public int Severity { get; set; }
+		[JsonPropertyName("Category")]
+		public string Category { get; set; }
 
-            [JsonPropertyName("Text")]
-            public string Text { get; set; }
+		[JsonPropertyName("EndDate")]
+		public DateTime EndDate { get; set; }
 
-            [JsonPropertyName("Category")]
-            public string Category { get; set; }
+		[JsonPropertyName("EndEpochDate")]
+		public int EndEpochDate { get; set; }
 
-            [JsonPropertyName("EndDate")]
-            public DateTime EndDate { get; set; }
+		[JsonPropertyName("MobileLink")]
+		public string MobileLink { get; set; }
 
-            [JsonPropertyName("EndEpochDate")]
-            public int EndEpochDate { get; set; }
+		[JsonPropertyName("Link")]
+		public string Link { get; set; }
+	}
 
-            [JsonPropertyName("MobileLink")]
-            public string MobileLink { get; set; }
+	public class Imperial
+	{
+		[JsonPropertyName("Value")]
+		public int Value { get; set; }
 
-            [JsonPropertyName("Link")]
-            public string Link { get; set; }
-        }
-        [JsonPropertyName("Value")]
-        public int Value { get; set; }
+		[JsonPropertyName("Unit")]
+		public string Unit { get; set; }
 
-        [JsonPropertyName("Unit")]
-        public string Unit { get; set; }
+		[JsonPropertyName("UnitType")]
+		public int UnitType { get; set; }
+	}
 
-        [JsonPropertyName("UnitType")]
-        public int UnitType { get; set; }
-        public class Maximum1
-        {
-            [JsonPropertyName("Value")]
-            public int Value { get; set; }
+	public class Maximum
+	{
+		[JsonPropertyName("Value")]
+		public int Value { get; set; }
 
-            [JsonPropertyName("Unit")]
-            public string Unit { get; set; }
+		[JsonPropertyName("Unit")]
+		public string Unit { get; set; }
 
-            [JsonPropertyName("UnitType")]
-            public int UnitType { get; set; }
-        }
-        [JsonPropertyName("Value")]
-        public int Value1 { get; set; }
+		[JsonPropertyName("UnitType")]
+		public int UnitType { get; set; }
+	}
 
-        [JsonPropertyName("Unit")]
-        public string Unit1 { get; set; }
+	public class Metric
+	{
+		[JsonPropertyName("Value")]
+		public int Value { get; set; }
 
-        [JsonPropertyName("UnitType")]
-        public int UnitType1 { get; set; }
-        public class Minimum1
-        {
-            [JsonPropertyName("Value")]
-            public int Value { get; set; }
+		[JsonPropertyName("Unit")]
+		public string Unit { get; set; }
 
-            [JsonPropertyName("Unit")]
-            public string Unit { get; set; }
+		[JsonPropertyName("UnitType")]
+		public int UnitType { get; set; }
+	}
 
-            [JsonPropertyName("UnitType")]
-            public int UnitType { get; set; }
-        }
-        [JsonPropertyName("Icon")]
-        public int Icon { get; set; }
+	public class Minimum
+	{
+		[JsonPropertyName("Value")]
+		public int Value { get; set; }
 
-        [JsonPropertyName("IconPhrase")]
-        public string IconPhrase { get; set; }
+		[JsonPropertyName("Unit")]
+		public string Unit { get; set; }
 
-        [JsonPropertyName("HasPrecipitation")]
-        public bool HasPrecipitation { get; set; }
+		[JsonPropertyName("UnitType")]
+		public int UnitType { get; set; }
+	}
 
-        [JsonPropertyName("PrecipitationType")]
-        public string PrecipitationType { get; set; }
+	public class Night
+	{
+		[JsonPropertyName("Icon")]
+		public int Icon { get; set; }
 
-        [JsonPropertyName("PrecipitationIntensity")]
-        public string PrecipitationIntensity { get; set; }
-        public class Night
-        {
-            [JsonPropertyName("Icon")]
-            public int Icon { get; set; }
+		[JsonPropertyName("IconPhrase")]
+		public string IconPhrase { get; set; }
 
-            [JsonPropertyName("IconPhrase")]
-            public string IconPhrase { get; set; }
+		[JsonPropertyName("HasPrecipitation")]
+		public bool HasPrecipitation { get; set; }
+	}
 
-            [JsonPropertyName("HasPrecipitation")]
-            public bool HasPrecipitation { get; set; }
+	public class Region
+	{
+		[JsonPropertyName("ID")]
+		public string ID { get; set; }
 
-            [JsonPropertyName("PrecipitationType")]
-            public string PrecipitationType { get; set; }
+		[JsonPropertyName("LocalizedName")]
+		public string LocalizedName { get; set; }
 
-            [JsonPropertyName("PrecipitationIntensity")]
-            public string PrecipitationIntensity { get; set; }
-        }
-        [JsonPropertyName("Headline")]
-        public Headline Headline1 { get; set; }
+		[JsonPropertyName("EnglishName")]
+		public string EnglishName { get; set; }
+	}
 
-        [JsonPropertyName("DailyForecasts")]
-        public List<DailyForecast> DailyForecasts { get; set; }
-        public class Root
-        {
-            [JsonPropertyName("Headline")]
-            public Headline Headline { get; set; }
+	public class SupplementalAdminArea
+	{
+		[JsonPropertyName("Level")]
+		public int Level { get; set; }
 
-            [JsonPropertyName("DailyForecasts")]
-            public List<DailyForecast> DailyForecasts { get; set; }
-        }
-        [JsonPropertyName("Minimum")]
-        public Minimum Minimum { get; set; }
+		[JsonPropertyName("LocalizedName")]
+		public string LocalizedName { get; set; }
 
-        [JsonPropertyName("Maximum")]
-        public Maximum Maximum { get; set; }
-        public class Temperature
-        {
-            [JsonPropertyName("Minimum")]
-            public Minimum Minimum { get; set; }
+		[JsonPropertyName("EnglishName")]
+		public string EnglishName { get; set; }
+	}
 
-            [JsonPropertyName("Maximum")]
-            public Maximum Maximum { get; set; }
-        }
-    }
+	public class Temperature
+	{
+		[JsonPropertyName("Minimum")]
+		public Minimum Minimum { get; set; }
+
+		[JsonPropertyName("Maximum")]
+		public Maximum Maximum { get; set; }
+	}
+
+	public class TimeZone
+	{
+		[JsonPropertyName("Code")]
+		public string Code { get; set; }
+
+		[JsonPropertyName("Name")]
+		public string Name { get; set; }
+
+		[JsonPropertyName("GmtOffset")]
+		public int GmtOffset { get; set; }
+
+		[JsonPropertyName("IsDaylightSaving")]
+		public bool IsDaylightSaving { get; set; }
+
+		[JsonPropertyName("NextOffsetChange")]
+		public DateTime NextOffsetChange { get; set; }
+	}
 }
