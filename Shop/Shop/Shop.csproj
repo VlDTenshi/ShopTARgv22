@@ -40,7 +40,6 @@
 
   <ItemGroup>
     <Folder Include="multipleFileUpload\" />
-    <Folder Include="wwwroot\js\signalr\" />
   </ItemGroup>
 
 </Project>
