@@ -10,157 +10,157 @@ namespace Shop.Core.Dto.CoctailDtos
 {
 	public class CoctailResponseRootDto
 	{
-			[JsonProperty(PropertyName = "idDrink", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("idDrink")]
 			public string idDrink { get; set; }
 
-			[JsonProperty(PropertyName = "strDrink", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strDrink")]
 			public string strDrink { get; set; }
 
-			[JsonProperty(PropertyName = "strDrinkAlternate", NullValueHandling = NullValueHandling.Ignore)]
-			public object strDrinkAlternate { get; set; }
+			[JsonPropertyName("strDrinkAlternate")]
+			public string strDrinkAlternate { get; set; }
 
-			[JsonProperty(PropertyName = "strTags", NullValueHandling = NullValueHandling.Ignore)]
-			public object strTags { get; set; }
+			[JsonPropertyName("strTags")]
+			public string strTags { get; set; }
 
-			[JsonProperty(PropertyName = "strVideo", NullValueHandling = NullValueHandling.Ignore)]
-			public object strVideo { get; set; }
+			[JsonPropertyName("strVideo")]
+			public string strVideo { get; set; }
 
-			[JsonProperty(PropertyName = "strCategory", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strCategory")]
 			public string strCategory { get; set; }
 
-			[JsonProperty(PropertyName = "strIBA", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIBA { get; set; }
+			[JsonPropertyName("strIBA")]
+			public string strIBA { get; set; }
 
-			[JsonProperty(PropertyName = "strAlcoholic", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strAlcoholic")]
 			public string strAlcoholic { get; set; }
 
-			[JsonProperty(PropertyName = "strGlass", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strGlass")]
 			public string strGlass { get; set; }
 
-			[JsonProperty(PropertyName = "strInstructions", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strInstructions")]
 			public string strInstructions { get; set; }
 
-			[JsonProperty(PropertyName = "strInstructionsES", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strInstructionsES")]
 			public string strInstructionsES { get; set; }
 
-			[JsonProperty(PropertyName = "strInstructionsDE", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strInstructionsDE")]
 			public string strInstructionsDE { get; set; }
 
-			[JsonProperty(PropertyName = "strInstructionsFR", NullValueHandling = NullValueHandling.Ignore)]
-			public object strInstructionsFR { get; set; }
+			[JsonPropertyName("strInstructionsFR")]
+			public string strInstructionsFR { get; set; }
 
-			[JsonProperty(PropertyName = "strInstructionsIT", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strInstructionsIT")]
 			public string strInstructionsIT { get; set; }
 
-			[JsonProperty(PropertyName = "strInstructionsZHHANS", NullValueHandling = NullValueHandling.Ignore)]
-			public object strInstructionsZHHANS { get; set; }
+			[JsonPropertyName("strInstructionsZHHANS")]
+			public string strInstructionsZHHANS { get; set; }
 
-			[JsonProperty(PropertyName = "strInstructionsZHHANT", NullValueHandling = NullValueHandling.Ignore)]
-			public object strInstructionsZHHANT { get; set; }
+			[JsonPropertyName("strInstructionsZHHANT")]
+			public string strInstructionsZHHANT { get; set; }
 
-			[JsonProperty(PropertyName = "strDrinkThumb", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strDrinkThumb")]
 			public string strDrinkThumb { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient1", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strIngredient1")]
 			public string strIngredient1 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient2", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strIngredient2")]
 			public string strIngredient2 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient3", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strIngredient3")]
 			public string strIngredient3 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient4", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strIngredient4")]
 			public string strIngredient4 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient5", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient5 { get; set; }
+			[JsonPropertyName("strIngredient5")]
+			public string strIngredient5 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient6", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient6 { get; set; }
+			[JsonPropertyName("strIngredient6")]
+			public string strIngredient6 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient7", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient7 { get; set; }
+			[JsonPropertyName("strIngredient7")]
+			public string strIngredient7 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient8", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient8 { get; set; }
+			[JsonPropertyName("strIngredient8")]
+			public string strIngredient8 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient9", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient9 { get; set; }
+			[JsonPropertyName("strIngredient9")]
+			public string strIngredient9 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient10", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient10 { get; set; }
+			[JsonPropertyName("strIngredient10")]
+			public string strIngredient10 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient11", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient11 { get; set; }
+			[JsonPropertyName("strIngredient11")]
+			public string strIngredient11 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient12", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient12 { get; set; }
+			[JsonPropertyName("strIngredient12")]
+			public string strIngredient12 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient13", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient13 { get; set; }
+			[JsonPropertyName("strIngredient13")]
+			public string strIngredient13 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient14", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient14 { get; set; }
+			[JsonPropertyName("strIngredient14")]
+			public string strIngredient14 { get; set; }
 
-			[JsonProperty(PropertyName = "strIngredient15", NullValueHandling = NullValueHandling.Ignore)]
-			public object strIngredient15 { get; set; }
+			[JsonPropertyName("strIngredient15")]
+			public string strIngredient15 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure1", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strMeasure1")]
 			public string strMeasure1 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure2", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strMeasure2")]
 			public string strMeasure2 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure3", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strMeasure3")]
 			public string strMeasure3 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure4", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strMeasure4")]
 			public string strMeasure4 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure5", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure5 { get; set; }
+			[JsonPropertyName("strMeasure5")]
+			public string strMeasure5 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure6", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure6 { get; set; }
+			[JsonPropertyName("strMeasure6")]
+			public string strMeasure6 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure7", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure7 { get; set; }
+			[JsonPropertyName("strMeasure7")]
+			public string strMeasure7 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure8", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure8 { get; set; }
+			[JsonPropertyName("strMeasure8")]
+			public string strMeasure8 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure9", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure9 { get; set; }
+			[JsonPropertyName("strMeasure9")]
+			public string strMeasure9 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure10", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure10 { get; set; }
+			[JsonPropertyName("strMeasure10")]
+			public string strMeasure10 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure11", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure11 { get; set; }
+			[JsonPropertyName("strMeasure11")]
+			public string strMeasure11 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure12", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure12 { get; set; }
+			[JsonPropertyName("strMeasure12")]
+			public string strMeasure12 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure13", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure13 { get; set; }
+			[JsonPropertyName("strMeasure13")]
+			public string strMeasure13 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure14", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure14 { get; set; }
+			[JsonPropertyName("strMeasure14")]
+			public string strMeasure14 { get; set; }
 
-			[JsonProperty(PropertyName = "strMeasure15", NullValueHandling = NullValueHandling.Ignore)]
-			public object strMeasure15 { get; set; }
+			[JsonPropertyName("strMeasure15")]
+			public string strMeasure15 { get; set; }
 
-			[JsonProperty(PropertyName = "strImageSource", NullValueHandling = NullValueHandling.Ignore)]
-			public object strImageSource { get; set; }
+			[JsonPropertyName("strImageSource")]
+			public string strImageSource { get; set; }
 
-			[JsonProperty(PropertyName = "strImageAttribution", NullValueHandling = NullValueHandling.Ignore)]
-			public object strImageAttribution { get; set; }
+			[JsonPropertyName("strImageAttribution")]
+			public string strImageAttribution { get; set; }
 
-			[JsonProperty(PropertyName = "strCreativeCommonsConfirmed", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("strCreativeCommonsConfirmed")]
 			public string strCreativeCommonsConfirmed { get; set; }
 
-			[JsonProperty(PropertyName = "dateModified", NullValueHandling = NullValueHandling.Ignore)]
+			[JsonPropertyName("dateModifiedstring")]
 			public string dateModified { get; set; }
 	}
 }
